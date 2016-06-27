@@ -1,0 +1,9 @@
+Weather Stats for 2014
+Total rain: 59.810
+Total snow: 1.610
+The hottest temperature fell in Aug with 85.429 degrees.
+The lowest temperature fell in Jan with 15.452 degrees.
+The hottest day was 13-Jul-11 with a temperature of 91.0.
+The coolest day was 07-Jan-10 with a temperature of 9.0.
+The largest rainfall fell in Oct with a total of 9.790 in. of rain.
+The largest snowfall fell in Jan with a total of 1.490 in. of snow.
