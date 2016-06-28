@@ -3,7 +3,7 @@ Total rain: 59.810
 Total snow: 1.610
 The hottest temperature fell in Aug with 85.429 degrees.
 The lowest temperature fell in Jan with 15.452 degrees.
-The hottest day(s) was 13-Jul-1, 08-Aug-1, 24-Aug-1, with a temperature of 91.0.
-The coolest day(s) was 07-Jan-1, 08-Jan-1, with a temperature of -2.9.
+The hottest day(s) was 13-Jul, 08-Aug, 24-Aug, with a temperature of 91.0.
+The coolest day(s) was 07-Jan, 08-Jan, with a temperature of -2.9.
 The largest rainfall fell in Oct with a total of 9.790 in. of rain.
 The largest snowfall fell in Jan with a total of 1.490 in. of snow.

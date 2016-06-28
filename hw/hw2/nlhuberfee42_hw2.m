@@ -15,6 +15,9 @@ rain = [];
 snow = [];
 months = [];
 
+% For use in naming file
+year = '  ';
+
 %% Begin file reading
 fileId = fopen('weather2014.txt', 'r');
 if ~(fileId < 0)
@@ -26,7 +29,9 @@ if ~(fileId < 0)
         %dates{index} = fscanf(fileId, '%s', 1);
         date = fscanf(fileId, '%s', 1);
         if(length(date) ~= 0)
+            year = date(8:9);
             dateNames((index-1)*8+1:((index-1)*8+1)+8) = date;
+            % Detect what month date is associated with
             switch date(4:6)
                 case 'Jan'
                     months(index) = 1;
@@ -55,6 +60,7 @@ if ~(fileId < 0)
                 otherwise
                     fprintf('Reading dates failed!\n');
             end
+            % Read in temp and weather data
             high(index) = fscanf(fileId, '%f', 1);
             low(index) = fscanf(fileId, '%f', 1);
             rain(index) = fscanf(fileId, '%f', 1);
@@ -115,7 +121,7 @@ if ~(fileId < 0)
     title('Snowfall');
     
     %% Produce summary file
-    filename = sprintf('summary_20%s.txt', '14');
+    filename = sprintf('summary_20%s.txt', year);
     toWrite = fopen(filename, 'w');
     fprintf(toWrite, 'Weather Stats for 2014\n');
     fprintf(toWrite, 'Total rain: %.3f\n', sum(totalRain));
@@ -192,7 +198,7 @@ if ~(fileId < 0)
     end
     fprintf(toWrite, 'The hottest day(s) was ');
     for i = 1:length(highestName)/9
-        fprintf(toWrite, '%s, ', highestName((i-1)*9+1:(i-1)*9+8));
+        fprintf(toWrite, '%s, ', highestName((i-1)*9+1:(i-1)*9+6));
     end
     fprintf(toWrite, 'with a temperature of %.1f.\n', highest);
     
@@ -214,7 +220,7 @@ if ~(fileId < 0)
     end
     fprintf(toWrite, 'The coolest day(s) was ');
     for i = 1:length(lowestName)/9
-        fprintf(toWrite, '%s, ', lowestName((i-1)*9+1:(i-1)*9+8));
+        fprintf(toWrite, '%s, ', lowestName((i-1)*9+1:(i-1)*9+6));
     end
     fprintf(toWrite, 'with a temperature of %.1f.\n', lowest);
     
