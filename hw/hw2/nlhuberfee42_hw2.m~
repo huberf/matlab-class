@@ -200,10 +200,10 @@ if ~(fileId < 0)
     index = 1;
     lowest = 100;
     lowestName = '';
-    for i = low
-        if lowest == i
+    for i = high
+        if highest == i
             dateNameIndex = 8*(index-1)+1;
-            lowestName = [lowestName, dateNames(dateNameIndex:dateNameIndex+8)];
+            highestName = [highestName, dateNames(dateNameIndex:dateNameIndex+8)];
         end
         if lowest > i
             lowest = i;
@@ -212,11 +212,7 @@ if ~(fileId < 0)
         end
         index = index + 1;
     end
-    fprintf(toWrite, 'The coolest day(s) was ');
-    for i = 1:length(lowestName)/9
-        fprintf(toWrite, '%s, ', lowestName((i-1)*9+1:(i-1)*9+8));
-    end
-    fprintf(toWrite, 'with a temperature of %.1f.\n', lowest);
+    fprintf(toWrite, 'The coolest day was %s with a temperature of %.1f.\n', lowestName, lowest);
     
     % Calculate most rainfall
     index = 1;
