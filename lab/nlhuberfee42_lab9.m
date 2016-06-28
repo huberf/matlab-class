@@ -63,7 +63,7 @@ tic
 % Bubble sort
 toSort = randVals;
 for h = 1:length(toSort)
-    for i = 1:((length(toSort)-1)-h)
+    for i = 1:((length(toSort))-h)
         if toSort(i) > toSort(i+1)
             temp = toSort(i);
             toSort(i) = toSort(i+1);
