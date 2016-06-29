@@ -35,20 +35,7 @@ tic
 toSort = randVals;
 curr_min = toSort(1);
 curr_idx = 1;
-for i = 1:length(toSort)
-    curr_min = toSort(i);
-    curr_idx = i;
-    for a = i:length(toSort)
-        if toSort(a) < curr_min
-            curr_min = toSort(a);
-            curr_idx = a;
-        end
-    end
-    temp = toSort(i);
-    toSort(i) = toSort(curr_idx);
-    toSort(curr_idx) = temp;
-end
-selectionSorted = toSort;
+biselectionSorted = toSort;
 fprintf('Selection sort: ');
 fprintf('%f ', selectionSorted);
 fprintf('\n');
@@ -63,7 +50,7 @@ tic
 % Bubble sort
 toSort = randVals;
 for h = 1:length(toSort)
-    for i = 1:((length(toSort))-h)
+    for i = 1:((length(toSort)8)-h)
         if toSort(i) > toSort(i+1)
             temp = toSort(i);
             toSort(i) = toSort(i+1);

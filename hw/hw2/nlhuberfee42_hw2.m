@@ -123,7 +123,7 @@ if ~(fileId < 0)
     %% Produce summary file
     filename = sprintf('summary_20%s.txt', year);
     toWrite = fopen(filename, 'w');
-    fprintf(toWrite, 'Weather Stats for 2014\n');
+    fprintf(toWrite, 'Weather Stats for 20%s\n', year);
     fprintf(toWrite, 'Total rain: %.3f\n', sum(totalRain));
     fprintf(toWrite, 'Total snow: %.3f\n', sum(totalSnow));
     
