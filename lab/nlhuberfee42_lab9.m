@@ -9,7 +9,7 @@ close all;
 
 randVals = randi(100, 1, 100);
 fprintf('Raw: ');
-fprintf('%f ', randVals);
+fprintf('%.f ', randVals);
 fprintf('\n');
 
 tic
@@ -26,7 +26,7 @@ for h = 1:length(toSort)
 end
 bubbleSorted = toSort;
 fprintf('Bubble sort: ');
-fprintf('%f ', bubbleSorted);
+fprintf('%.f ', bubbleSorted);
 fprintf('\n');
 toc
 
@@ -35,9 +35,22 @@ tic
 toSort = randVals;
 curr_min = toSort(1);
 curr_idx = 1;
-biselectionSorted = toSort;
+for i = 1:length(toSort)
+    curr_min = toSort(i);
+    curr_idx = i;
+    for a = i:length(toSort)
+        if toSort(a) < curr_min
+            curr_min = toSort(a);
+            curr_idx = a;
+        end
+    end
+    temp = toSort(i);
+    toSort(i) = toSort(curr_idx);
+    toSort(curr_idx) = temp;
+end
+selectionSorted = toSort;
 fprintf('Selection sort: ');
-fprintf('%f ', selectionSorted);
+fprintf('%.f ', selectionSorted);
 fprintf('\n');
 toc
 
@@ -50,7 +63,7 @@ tic
 % Bubble sort
 toSort = randVals;
 for h = 1:length(toSort)
-    for i = 1:((length(toSort)8)-h)
+    for i = 1:((length(toSort))-h)
         if toSort(i) > toSort(i+1)
             temp = toSort(i);
             toSort(i) = toSort(i+1);
