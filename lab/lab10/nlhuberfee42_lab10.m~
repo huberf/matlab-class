@@ -1,0 +1,15 @@
+% ENGR1120 Tennessee Tech
+% Noah Huber-Feely 6/29/2016
+% Lab 10 - User-defined functions
+
+% Initialize work space
+clear variables
+close all
+clc
+
+toCompare = [1, 2, 3, 4, 5, 6];
+
+meanOf = ttu_mean(toCompare);
+
+minOf = ttu_min(toCompare);
+fprintf('Minimu;
